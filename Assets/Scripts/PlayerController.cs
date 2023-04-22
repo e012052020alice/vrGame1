@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
             FireEffect.Stop();
             FireEffect.Play();
             FireSound.Play();
+            if (RH.transform.tag == "enemy")
+            {
+                Destroy(RH.transform.gameObject);
+            }
         }
     }
 }
