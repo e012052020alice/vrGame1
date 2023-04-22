@@ -6,10 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     public ParticleSystem FireEffect;
     private RaycastHit RH;
+    private AudioSource FireSound;
     // Start is called before the first frame update
     void Start()
     {
-        
+        FireSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
             FireEffect.transform.rotation = Quaternion.Euler(270, 0, 0);
             FireEffect.Stop();
             FireEffect.Play();
+            FireSound.Play();
         }
     }
 }
